@@ -15,5 +15,6 @@ export function createDocument(): StudioDocument {
     },
     grid: null,
     revision: 0,
+    calibration: null,
   };
 }

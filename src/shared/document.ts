@@ -30,6 +30,8 @@ export interface Grid {
   rows: number;
   cells: Cell[];
   revision: number;
+  /** 本次生成实际生效的校准模式；null 表示未校准采样 */
+  calibrationMode: "global" | "local" | null;
 }
 export interface StudioDocument {
   asset: Asset | null;
@@ -37,4 +39,6 @@ export interface StudioDocument {
   settings: Settings;
   grid: Grid | null;
   revision: number;
+  /** 已确认且当前生效的采样校准（由 calibration 特性维护） */
+  calibration: import("../features/calibration/lib/state").Calibration | null;
 }
